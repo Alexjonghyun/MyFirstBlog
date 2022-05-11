@@ -7,6 +7,7 @@ const RegisterPage = () => {
 
     const idChange = (e)=>{
         setID(e.target.value);
+
     }
     const pwChange = (e) => {
         setPW(e.target.value);

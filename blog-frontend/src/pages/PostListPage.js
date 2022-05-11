@@ -13,7 +13,7 @@ const linking = () => {
 const onlogoutClick = () => {
     sessionStorage.setItem("authenticated", "false");
     sessionStorage.setItem("Authorized", "false");
-    sessionStorage.setItem("name", "null")
+    sessionStorage.setItem("name", "null");
     window.location.reload();
 }
 const Writing = () => {
@@ -27,8 +27,8 @@ const PostListPage = () => {
         axios.get("/pybo/api/post/")
             .then((res) => { setData(
                 res.data.map( (p) =>
-                    <div>
-                        <Link to={'/'+p.id} key={p.id} >Title : {p.subject} (Written in {p.create_date.substring(0,19)} )</Link>
+                    <div style={{fontSize:"20px", textAlign: "justify"}}>
+                        <Link style={{color:"black"}} to={'/'+p.id} key={p.id} >Title : {p.subject} (Written in {p.create_date.substring(0,19)} )</Link>
                     </div>
                 )
             ); })
@@ -40,7 +40,7 @@ const PostListPage = () => {
 
     return (
         <div>
-            <div>
+            <div style={{paddingBottom:"10px"}}>
                 <button onClick={linking}>Login</button>
                 <button onClick={onlogoutClick}>logout</button>
                 <button onClick={Writing}>Write</button>

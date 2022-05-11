@@ -23,6 +23,7 @@ const WritePage = () => {
                 console.log(error);
             });
         window.location.replace('/');
+
     }
     console.log(sessionStorage.getItem("Authorized"));
     return ( (sessionStorage.getItem("Authorized")==="true")?
